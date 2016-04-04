@@ -32,7 +32,7 @@ end
 
 def sudoku
   puts "Welcome to Sudoku! Input your numbers here!"
-  puts "Make sure to use commas and brackets!"
+  puts "Make sure to use commas between the numbers!"
   equation = gets.strip.split(',')
   if equation[0,9].uniq.count == 9
     @row_period << 1
@@ -53,7 +53,6 @@ def sudoku
                   if equation[72,9].uniq.count == 9
                     @row_period << 1
                     if @row_period.count == 9
-                      puts 'Horizontal Rows Good'
                       @sudoku_puzzle << 1
                     end
                   end
@@ -95,7 +94,6 @@ def sudoku
                   if @column_nine.uniq.count == 9
                     @column_period << 1
                     if @column_period.count == 9
-                      puts 'Sudoku Columns GOOD'
                       @sudoku_puzzle << 1
                     end
                   end
@@ -137,7 +135,6 @@ def sudoku
                   if @box_nine.uniq.count == 9
                     @box_period << 1
                     if @box_period.count == 9
-                      puts 'Boxes GOOD'
                       @sudoku_puzzle << 1
                     end
                   end
@@ -152,6 +149,8 @@ def sudoku
 
   if @sudoku_puzzle.count == 3
     puts 'Sudoku Numbers are OK'
+  else
+    puts 'Please try different set of numbers!'
   end
 
 end
